@@ -1,14 +1,14 @@
 body {
-    background: #f5f5f5;
+    background: #fffcfd;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 30px;
+    padding: 40px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 40px;
-    animation: fade 1.5s;
+    margin-bottom: 50px;
+    color: #444;
 }
 
 .cards-container {
@@ -19,70 +19,103 @@ h1 {
 }
 
 .card {
-    width: 180px;
+    width: 220px;
+
     min-height: 120px;
+
     background: white;
-    border-radius: 15px;
-    padding: 15px;
+
+    border-radius: 25px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    transition: 0.35s;
+
+    border: 3px solid #ffd4e7;
+
     position: relative;
 
-    box-shadow: 0 0 12px rgba(255, 150, 180, 0.5);
-
-    transition: 0.3s;
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 120, 170, 0.9);
+    background: #ffe6f1;
+
+    box-shadow: 0 0 25px #ff9ccc;
+
+    transform: translateY(-5px) scale(1.03);
 }
 
 .word {
-    font-size: 28px;
-    text-align: center;
-    margin-top: 10px;
+    font-size: 34px;
+
     font-weight: bold;
+
+    color: #333;
+
+    margin-top: 10px;
 }
+
+/* ПЕРЕВОД СКРЫТ */
 
 .translation {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 18px;
-    color: #666;
-}
-
-.grammar-box {
-    margin-top: 20px;
-
-    background: #ffe4ec;
-
-    border-radius: 10px;
-
-    padding: 10px;
-
-    font-size: 15px;
-
     opacity: 0;
 
     max-height: 0;
 
     overflow: hidden;
 
-    transition: 0.4s;
+    transition: 0.3s;
+
+    font-size: 20px;
+
+    color: #555;
+
+    margin-top: 10px;
 }
+
+/* ПЕРЕВОД ПОЯВЛЯЕТСЯ ПРИ НАВЕДЕНИИ */
+
+.card:hover .translation {
+    opacity: 1;
+
+    max-height: 100px;
+}
+
+/* СПРЯЖЕНИЯ СКРЫТЫ */
+
+.grammar-box {
+    opacity: 0;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition: 0.35s;
+
+    background: #ffd9ea;
+
+    border-radius: 15px;
+
+    margin-top: 15px;
+
+    padding: 0 10px;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    color: #444;
+}
+
+/* СПРЯЖЕНИЯ ПОЯВЛЯЮТСЯ */
 
 .card:hover .grammar-box {
     opacity: 1;
+
     max-height: 300px;
-}
 
-@keyframes fade {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    padding: 12px;
 }
